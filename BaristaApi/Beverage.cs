@@ -15,7 +15,14 @@ class Espresso : IBeverage
 class Latte : IBeverage
 {
     public List<string> Ingredients => new List<string>();
-    public AddWater
+    public IBeverage AddWater(int amount){
+        Ingredients.Add("water");
+        return this;
+    }
+    public IBeverage AddBeans(int amount){
+        Ingredients.Add("beans");
+        return this;
+    }
 
     public string CupType => throw new System.NotImplementedException();
 }
