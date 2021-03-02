@@ -7,10 +7,8 @@ namespace BaristaApi
         static void Main(string[] args)
         {
             Console.WriteLine("Hej");
+            Console.WriteLine("hej på dig du");
             /* pseudo-code
-
-            Hej Hej //Isak
-
             Espresso espresso = new Espresso().AddWater(20).AddBeans(b => b.AmountInG = 5 && b.Sort = CoffeSorts.Robusta).ToBravage();
             //espresso is type of Espresso
 
