@@ -6,6 +6,7 @@ namespace BaristaApi
     {
         static void Main(string[] args)
         {
+            Console.WriteLine("Hej");
             /* pseudo-code
 
             Hej Hej //Isak
