@@ -4,18 +4,20 @@ public interface IBeverage{
 	List<string> Ingredients { get; }
     string CupType { get; }
 }
+public interface IIngrident{
+    public string IngridentName {get;}
+    public int IngridientAmount {get;}
+}
 
 class Espresso : IBeverage
 {
-    public List<string> Ingredients => throw new System.NotImplementedException();
-
-    public string CupType => throw new System.NotImplementedException();
+    public List<IIngrident> Ingredients {get; set;}
 }
 
 class Latte : IBeverage
 {
     public List<string> Ingredients => new List<string>();
-    public IBeverage AddWater(int amount){
+    public IBeverage AddIngrident(IIngrident ingrient){
         Ingredients.Add("water");
         return this;
     }
