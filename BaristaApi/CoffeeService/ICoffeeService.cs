@@ -1,9 +1,5 @@
-﻿using BaristaApi.CoffeIngridients;
+﻿using BaristaApi.CoffeeTypes;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BaristaApi.CoffeeService
 {
@@ -22,6 +18,8 @@ namespace BaristaApi.CoffeeService
         public ICoffeeService AddWater(int amount);
 
         public ICoffeeService AddBeans(Func<Beans, Beans> choseBeans);
+
+        public ICoffeeService GrindBeans();
 
         public ICoffee ToBeverege();
     }

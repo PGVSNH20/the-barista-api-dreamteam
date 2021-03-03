@@ -1,17 +1,9 @@
-﻿using BaristaApi.CoffeIngridients;
-using System;
-using System.Collections.Generic;
-
-internal class Espresso : ICoffee
+﻿namespace BaristaApi.CoffeeTypes
 {
-    public List<IIngridient> Ingredients { get; set; }
-    public string CupType { get; set; }
-    public Beans Beans { get; set; }
-
-    public Espresso(ICoffee beverage)
+    public class Espresso : Coffee
     {
-        Ingredients = beverage.Ingredients;
-        CupType = beverage.CupType;
-        Beans = beverage.Beans;
+        public Espresso(ICoffee beverage) : base(beverage)
+        {
+        }
     }
 }

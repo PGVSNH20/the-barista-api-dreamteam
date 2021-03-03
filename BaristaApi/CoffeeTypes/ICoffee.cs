@@ -1,10 +1,12 @@
-using BaristaApi.CoffeIngridients;
-using System;
+using BaristaApi.CoffeeIngridients;
 using System.Collections.Generic;
 
-public interface ICoffee
+namespace BaristaApi.CoffeeTypes
 {
-    public List<IIngridient> Ingredients { get; }
-    public string CupType { get; }
-    public Beans Beans { get; }
+    public interface ICoffee
+    {
+        public List<IIngridient> Ingredients { get; }
+        public string CupType { get; }
+        public Beans Beans { get; }
+    }
 }

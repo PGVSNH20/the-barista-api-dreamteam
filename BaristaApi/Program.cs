@@ -1,5 +1,4 @@
-﻿using BaristaApi.CoffeeService;
-using System;
+﻿using System;
 
 namespace BaristaApi
 {
@@ -7,23 +6,44 @@ namespace BaristaApi
     {
         private static void Main(string[] args)
         {
-            //var espresso = new Coffe().AddWater(20).AddBeans(b => { b.AmountInG = 7; b.Sort = "Robusta"; return b; }).ToBeverege();
-            ////espresso is type of Espresso
-
-            //var espresso2 = new Coffe().AddWater(20).AddBeans(b => { b.AmountInG = 7; b.Sort = "Robusta"; return b; }).ToBeverege() as Espresso;
-
-            //Latte latte = new Espresso().AddWater(200) as Latte;
-
-            //var testLatte = new Coffe_test().ToBeverege();
-            //IBavarege_test testLatte2 = new Coffe_test().ToBeverege();
-
-            ////Latte latte = (Latte)new Coffe().AddWater(20).AddBeans(b => { b.AmountInG = 7; b.Sort = "Robusta"; return b; }).AddMilk(100).ToBeverege() as Latte;
-            ////latte is type of Latte
-
-            //Latte latte2 = new Coffe().AddWater(20).AddBeans(b => { b.AmountInG = 7; b.Sort = "Robusta"; return b; }).AddMilk(100).ToBeverege() as Latte;
-            var espresso3 = new CoffeeService.CoffeeService().AddEspresso(50).ToBeverege();
-            var espresso = new CoffeeService.CoffeeService().AddEspresso(50).AddBeans(b => { b.AmountInG = 7; b.Sort = "Robusta"; return b; }).ToBeverege();
-            Espresso espress2 = new CoffeeService.CoffeeService().ToBeverege() as Espresso;
+            var espresso = new CoffeeService.CoffeeService()
+                .AddBeans(b => { b.AmountInG = 100; b.Sort = "Robusta"; return b; })
+                .GrindBeans()
+                .AddEspresso(200)
+                .ToBeverege();
+            var americano = new CoffeeService.CoffeeService()
+                .AddBeans(b => { b.AmountInG = 50; b.Sort = "Robusta"; return b; })
+                .GrindBeans()
+                .AddEspresso(100)
+                .AddWater(100)
+                .ToBeverege();
+            var cappuccino = new CoffeeService.CoffeeService()
+                .AddBeans(b => { b.AmountInG = 50; b.Sort = "Robusta"; return b; })
+                .GrindBeans()
+                .AddEspresso(50)
+                .AddMilkFoam(100)
+                .AddMilk(50)
+                .ToBeverege();
+            var macchiato = new CoffeeService.CoffeeService()
+                .AddBeans(b => { b.AmountInG = 75; b.Sort = "Robusta"; return b; })
+                .GrindBeans()
+                .AddEspresso(50)
+                .AddMilkFoam(150)
+                .ToBeverege();
+            var mocha = new CoffeeService.CoffeeService()
+                .AddBeans(b => { b.AmountInG = 75; b.Sort = "Robusta"; return b; })
+                .GrindBeans()
+                .AddEspresso(50)
+                .AddMilk(150)
+                .AddChocolateSyrup(50)
+                .ToBeverege();
+            var latte = new CoffeeService.CoffeeService()
+                .AddBeans(b => { b.AmountInG = 50; b.Sort = "Robusta"; return b; })
+                .GrindBeans()
+                .AddEspresso(50)
+                .AddMilk(150)
+                .ToBeverege();
+            Console.WriteLine("hej");
         }
     }
 }
