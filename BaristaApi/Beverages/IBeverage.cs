@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BaristaApi.Beverages
 {
-    internal interface IBeverege
+    public interface IBeverage
     {
         List<string> Ingredients { get; }
         string CupType { get; }

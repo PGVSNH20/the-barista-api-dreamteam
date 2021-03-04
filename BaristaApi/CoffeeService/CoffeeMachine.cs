@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace BaristaApi.CoffeeService
 {
-    public class CoffeeMachine : IBeverege, ICoffeeMachine
+    public class CoffeeMachine : IBeverage, ICoffeeMachine
     {
         public List<string> Ingredients { get; set; }
         public string CupType { get; set; }
@@ -47,7 +47,8 @@ namespace BaristaApi.CoffeeService
 
         public IBeverage ToBeverage()
         {
-            
+            IBeverage beverage = new Beverage(Ingredients);
+            return beverage;
         }
     }
 }
