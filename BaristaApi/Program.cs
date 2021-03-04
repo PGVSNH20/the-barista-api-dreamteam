@@ -15,6 +15,10 @@ namespace BaristaApi
             var espresso = new CoffeeMachine().AddEspresso().ToBeverage();
             var cappuccino = new CoffeeMachine().AddEspresso().AddMilkFoam().AddMilk().ToBeverage();
             var americano = new CoffeeMachine().AddEspresso().AddWater().ToBeverage();
+            var macchiato = new CoffeeMachine().AddEspresso().AddMilkFoam().ToBeverage();
+            var mocha = new CoffeeMachine().AddEspresso().AddChocolateSyrup().AddMilk().ToBeverage();
+            var latte = new CoffeeMachine().AddEspresso().AddMilk().ToBeverage();
+            var customDrink = new CoffeeMachine().AddMilk().AddChocolateSyrup().ToBeverage();
             Console.WriteLine();
         }
     }
