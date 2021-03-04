@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BaristaApi.Beverages;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,34 +7,47 @@ using System.Threading.Tasks;
 
 namespace BaristaApi.CoffeeService
 {
-    public class CoffeeMachine : IBeverage, ICoffeeMachine
+    public class CoffeeMachine : IBeverege, ICoffeeMachine
     {
         public List<string> Ingredients { get; set; }
         public string CupType { get; set; }
-
+        public CoffeeMachine()
+        {
+            Ingredients = new List<string>();
+        }
         public ICoffeeMachine AddChocolateSyrup()
         {
-            throw new NotImplementedException();
+            Ingredients.Add("Chocolate Syrup");
+            return this;
         }
 
         public ICoffeeMachine AddEspresso()
         {
-            throw new NotImplementedException();
+            Ingredients.Add("Espresso");
+            return this;
         }
 
         public ICoffeeMachine AddMilk()
         {
-            throw new NotImplementedException();
+            Ingredients.Add("Milk");
+            return this;
         }
 
         public ICoffeeMachine AddMilkFoam()
         {
-            throw new NotImplementedException();
+            Ingredients.Add("Milk Foam");
+            return this;
         }
 
         public ICoffeeMachine AddWater()
         {
-            throw new NotImplementedException();
+            Ingredients.Add("Water");
+            return this;
+        }
+
+        public IBeverage ToBeverage()
+        {
+            
         }
     }
 }

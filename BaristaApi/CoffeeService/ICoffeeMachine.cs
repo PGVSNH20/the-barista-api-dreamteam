@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BaristaApi.CoffeeService
 {
-    internal interface ICoffeeMachine
+    public interface ICoffeeMachine
     {
         public ICoffeeMachine AddEspresso();
 
