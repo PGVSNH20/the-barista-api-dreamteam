@@ -47,10 +47,7 @@ namespace BaristaApi.CoffeeService
 
         public IBeverage ToBeverage()
         {
-           
-            bool isAmericano = CheckRecipe(Ingredients, Americano.recipe);
-            bool isMacchiato = CheckRecipe(Ingredients, Macchiato.recipe);
-
+          
             if (CheckRecipe(Ingredients, Espresso.recipe))
             {
                 return new Espresso(Ingredients);
@@ -61,19 +58,18 @@ namespace BaristaApi.CoffeeService
                 return new Cappuccino(Ingredients);
             }
 
-            else if (isAmericano)
+            else if (CheckRecipe(Ingredients, Americano.recipe))
             {
                 return new Americano(Ingredients);
             }
 
-            else if (isMacchiato)
+            else if (CheckRecipe(Ingredients, Macchiato.recipe))
             {
                 return new Macchiato(Ingredients);
             }
 
             IBeverage beverage = new Beverage(Ingredients);
             return beverage;
-
 
             
         }
