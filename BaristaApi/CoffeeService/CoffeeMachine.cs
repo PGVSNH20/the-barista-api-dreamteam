@@ -47,9 +47,8 @@ namespace BaristaApi.CoffeeService
 
         public IBeverage ToBeverage()
         {
-
-            bool isEspresso = CheckRecipe(Ingredients, Espresso.recipe);
-            bool isCappuccino = CheckRecipe(Ingredients, Cappuccino.recipe);
+            bool isEspresso = Ingredients.SequenceEqual(Espresso.recipe);
+            bool isCappuccino = Ingredients.SequenceEqual(Cappuccino.recipe);
             if (isEspresso)
             {
                 return new Espresso(Ingredients);
@@ -63,14 +62,6 @@ namespace BaristaApi.CoffeeService
             IBeverage beverage = new Beverage(Ingredients);
             return beverage;
             
-        }
-
-        private bool CheckRecipe(List<string> listOne, List<string> listTwo)
-        {
-            listOne = listOne.OrderBy(i => i).ToList();
-            listTwo = listTwo.OrderBy(i => i).ToList();
-
-            return listOne.SequenceEqual(listTwo);
         }
     }
 }
