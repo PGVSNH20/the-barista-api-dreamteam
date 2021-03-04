@@ -8,7 +8,7 @@ namespace BaristaApi.Beverages
 {
     public class Espresso : Beverage
     {
-        public List<string> recipe = new List<string>()
+        public static List<string> recipe = new List<string>()
         {
             "Espresso"
         };

@@ -3,18 +3,18 @@ using System;
 
 namespace BaristaApi
 {
-    internal class Program
+    class Program
     {
-        private static void Main(string[] args)
+        static void Main(string[] args)
         {
+
             //Espresso espresso = new Espresso().AddWater(20).AddBeans(b => b.AmountInG = 5 && b.Sort = CoffeSorts.Robusta).ToBravage();
-            ////espresso is type of Espresso
+            //espresso is type of Espresso
 
             //Latte latte = new Espresso().AddWater(20).AddBeans(b => b.AmountInG = 7 && b.Sort = CoffeSorts.Robusta).AddMilk().ToBravage();
-            ////latte is type of Latte
-
-            var drink = new CoffeeMachine().AddEspresso().AddMilk().AddMilkFoam().ToBeverage();
-            Console.WriteLine("hej");
+            //latte is type of Latte
+            var espresso = new CoffeeMachine().AddEspresso().AddWater().ToBeverage();
+            Console.WriteLine();
         }
     }
 }
