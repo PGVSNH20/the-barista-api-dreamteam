@@ -48,9 +48,15 @@ namespace BaristaApi.CoffeeService
         public IBeverage ToBeverage()
         {
             bool isEspresso = Ingredients.SequenceEqual(Espresso.recipe);
+            bool isCappuccino = Ingredients.SequenceEqual(Cappuccino.recipe);
             if (isEspresso)
             {
                 return new Espresso(Ingredients);
+            }
+
+            else if (isCappuccino)
+            {
+                return new Cappuccino(Ingredients);
             }
 
             IBeverage beverage = new Beverage(Ingredients);
