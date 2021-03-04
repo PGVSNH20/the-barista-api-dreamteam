@@ -14,6 +14,7 @@ namespace BaristaApi
             //latte is type of Latte
             var espresso = new CoffeeMachine().AddEspresso().ToBeverage();
             var cappuccino = new CoffeeMachine().AddEspresso().AddMilkFoam().AddMilk().ToBeverage();
+            var americano = new CoffeeMachine().AddEspresso().AddWater().ToBeverage();
             Console.WriteLine();
         }
     }

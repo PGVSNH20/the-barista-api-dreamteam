@@ -47,21 +47,42 @@ namespace BaristaApi.CoffeeService
 
         public IBeverage ToBeverage()
         {
-            bool isEspresso = Ingredients.SequenceEqual(Espresso.recipe);
-            bool isCappuccino = Ingredients.SequenceEqual(Cappuccino.recipe);
-            if (isEspresso)
+           
+            bool isAmericano = CheckRecipe(Ingredients, Americano.recipe);
+            bool isMacchiato = CheckRecipe(Ingredients, Macchiato.recipe);
+
+            if (CheckRecipe(Ingredients, Espresso.recipe))
             {
                 return new Espresso(Ingredients);
             }
 
-            else if (isCappuccino)
+            else if (CheckRecipe(Ingredients, Cappuccino.recipe))
             {
                 return new Cappuccino(Ingredients);
             }
 
+            else if (isAmericano)
+            {
+                return new Americano(Ingredients);
+            }
+
+            else if (isMacchiato)
+            {
+                return new Macchiato(Ingredients);
+            }
+
             IBeverage beverage = new Beverage(Ingredients);
             return beverage;
+
+
             
+        }
+        private bool CheckRecipe(List<string> listOne, List<string> listTwo)
+        {
+            listOne = listOne.OrderBy(i => i).ToList();
+            listTwo = listTwo.OrderBy(i => i).ToList();
+
+            return listOne.SequenceEqual(listTwo);
         }
     }
 }
