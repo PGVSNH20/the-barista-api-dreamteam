@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace BaristaApi.Beverages
 {
-    internal class Espresso : Beverage
+    public class Espresso : Beverage
     {
+        public Espresso(List<string> ingridients) : base(ingridients)
+        {
+        }
     }
 }
