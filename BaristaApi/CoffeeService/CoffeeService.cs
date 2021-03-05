@@ -49,7 +49,7 @@ namespace BaristaApi.CoffeeService
         {
             if (Beans.AmountInG <= 0) throw new Exception("No Beans added!");
             else if (Beans.Grinded == false) throw new Exception("Beans not grind!");
-            CoffeeIngridients.Espresso espresso = new CoffeeIngridients.Espresso(GenerateIngrident("Espresso", amount));
+            CoffeeIngridients.EspressoIngr espresso = new CoffeeIngridients.EspressoIngr(GenerateIngrident("Espresso", amount));
             Ingredients.Add(espresso);
             return this;
         }

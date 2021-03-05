@@ -1,14 +1,14 @@
 ﻿namespace BaristaApi.CoffeeIngridients
 {
-    public class Espresso : Ingridient
+    public class EspressoIngr : Ingridient
     {
-        public Espresso(Ingridient ingrident)
+        public EspressoIngr(Ingridient ingrident)
         {
             Name = ingrident.Name;
             AmountInG = ingrident.AmountInG;
         }
 
-        public Espresso(int amountIng)
+        public EspressoIngr(int amountIng)
         {
             Name = "Espresso";
             AmountInG = amountIng;
