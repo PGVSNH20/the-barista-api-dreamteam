@@ -9,7 +9,10 @@ using System.Threading.Tasks;
 namespace BaristaApi.CoffeeService
 {
     public interface ICoffeeMachine
+
     {
+        public delegate Bean BeanDelegate(Bean bean);
+
         public ICoffeeMachine AddEspresso();
 
         public ICoffeeMachine AddMilk();
@@ -22,8 +25,10 @@ namespace BaristaApi.CoffeeService
 
         public ICoffeeMachine AddBean(string sort, int amount);
 
-        public ICoffeeMachine AddBean(Func<Bean, Bean> beanFunc);
+        //public ICoffeeMachine AddBean(Func<Bean, Bean> beanFunc);
 
-        public IBeverage ToBeverage();     
+        public ICoffeeMachine AddBean(BeanDelegate beanFunc);
+
+        public IBeverage ToBeverage();
     }
 }
