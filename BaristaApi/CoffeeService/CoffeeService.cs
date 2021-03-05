@@ -9,20 +9,22 @@ namespace BaristaApi.CoffeeService
     {
         public List<IIngridient> Ingredients { get; set; }
         public string CupType { get; set; }
-        public Beans Beans { get; set; }
+        private EspressoMachine EspressoMachine { get; set; }
 
         public CoffeeService()
         {
             Ingredients = new List<IIngridient>();
-            Beans = new Beans();
+            EspressoMachine = new EspressoMachine();
         }
 
         public ICoffee ToBeverege()
         {
-            if (Beans.AmountInG <= 0) throw new Exception("No Beans added!");
-            else if (Beans.Grinded == false) throw new Exception("Beans not grind!");
+            if (EspressoMachine.Beans.AmountInG <= 0) throw new Exception("No Beans added!");
+            else if (EspressoMachine.Beans.Grinded == false) throw new Exception("Beans not grind!");
             else if (RecipeChecker(this.Ingredients, CoffeeRecepes.Espresso))
-                return new CoffeeTypes.Espresso(this);
+                return new Espresso(this);
+            else if (RecipeChecker(this.Ingredients, CoffeeRecepes.DoubleEspresso))
+                return new DoubleEspresso(this);
             else if (RecipeChecker(this.Ingredients, CoffeeRecepes.Americano))
                 return new Americano(this);
             else if (RecipeChecker(this.Ingredients, CoffeeRecepes.Cappuccino))
@@ -45,24 +47,22 @@ namespace BaristaApi.CoffeeService
             };
         }
 
-        public ICoffeeService AddEspresso(int amount)
+        public ICoffeeService AddEspresso()
         {
-            if (Beans.AmountInG <= 0) throw new Exception("No Beans added!");
-            else if (Beans.Grinded == false) throw new Exception("Beans not grind!");
-            CoffeeIngridients.EspressoIngr espresso = new CoffeeIngridients.EspressoIngr(GenerateIngrident("Espresso", amount));
-            Ingredients.Add(espresso);
+            Ingredients.Add(EspressoMachine.MakeEspresso());
             return this;
         }
 
         public ICoffeeService AddMilk(int amount)
         {
-            Ingredients.Add(GenerateIngrident("Milk", amount));
+            Ingredients.Add(new Milk(amount));
             return this;
         }
 
         public ICoffeeService AddMilkFoam(int amount)
         {
-            Ingredients.Add(GenerateIngrident("Milk Foam", amount));
+            Milk milk = new Milk(amount / 2);
+            Ingredients.Add(EspressoMachine.FoamMilk(milk));
             return this;
         }
 
@@ -78,16 +78,15 @@ namespace BaristaApi.CoffeeService
             return this;
         }
 
-        public ICoffeeService AddBeans(Func<Beans, Beans> defineBeans)
+        public ICoffeeService AddBeans(Func<Beans, Beans> choseBeans)
         {
-            Beans = defineBeans(Beans);
+            EspressoMachine.AddBeans(choseBeans);
             return this;
         }
 
         public ICoffeeService GrindBeans()
         {
-            if (Beans.AmountInG > 0) Beans.Grinded = true;
-            else throw new Exception("No Beans added!");
+            EspressoMachine.GrindBeans();
             return this;
         }
 

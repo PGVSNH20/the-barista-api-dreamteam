@@ -1,6 +1,6 @@
 ﻿namespace BaristaApi.CoffeeIngridients
 {
-    internal class Milk : IIngridient
+    public class Milk : IIngridient
     {
         public string Name { get; set; } = "Milk";
         public int AmountInG { get; set; }

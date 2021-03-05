@@ -7,7 +7,7 @@ namespace BaristaApi.CoffeeService
     {
         public Ingridient GenerateIngrident(string name, int amount);
 
-        public ICoffeeService AddEspresso(int amount);
+        public ICoffeeService AddEspresso();
 
         public ICoffeeService AddMilk(int amount);
 

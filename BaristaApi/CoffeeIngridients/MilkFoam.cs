@@ -16,5 +16,12 @@
             AmountInG = amountIng;
             FatPercentage = "1,5%";
         }
+
+        public MilkFoam(Milk milk)
+        {
+            Name = "Milk Foam";
+            AmountInG = milk.AmountInG * 2;
+            FatPercentage = milk.FatPercentage;
+        }
     }
 }

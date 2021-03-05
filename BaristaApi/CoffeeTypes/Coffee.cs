@@ -6,12 +6,12 @@ public class Coffee : ICoffee
 {
     public List<IIngridient> Ingredients { get; set; }
     public string CupType { get; set; }
-    public Beans Beans { get; set; }
+
+    public int BeverageSizeInG { get; set; } = 0;
 
     public Coffee(ICoffee beverage)
     {
         Ingredients = beverage.Ingredients;
         CupType = beverage.CupType;
-        Beans = beverage.Beans;
     }
 }
