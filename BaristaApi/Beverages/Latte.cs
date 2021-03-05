@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BaristaApi.Ingredients;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,7 +14,7 @@ namespace BaristaApi.Beverages
             "Espresso",
             "Milk"
         };
-        public Latte(List<string> ingridients) : base(ingridients)
+        public Latte(List<string> ingridients, Bean bean) : base(ingridients, bean)
         {
 
         }

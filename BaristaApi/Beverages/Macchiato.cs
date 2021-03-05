@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BaristaApi.Ingredients;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -14,7 +15,7 @@ namespace BaristaApi.Beverages
             "Milk Foam"
 
         };
-        public Macchiato(List<string> ingridients) : base(ingridients)
+        public Macchiato(List<string> ingridients, Bean bean) : base(ingridients, bean)
         {
 
         }

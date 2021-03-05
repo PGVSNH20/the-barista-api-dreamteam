@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BaristaApi.Ingredients;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,5 +11,6 @@ namespace BaristaApi.Beverages
     {
         List<string> Ingredients { get; }
         string CupType { get; }
+        Bean Bean { get; }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using BaristaApi.Beverages;
+using BaristaApi.Ingredients;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,6 +12,7 @@ namespace BaristaApi.CoffeeService
     {
         public List<string> Ingredients { get; set; }
         public string CupType { get; set; }
+        public Bean Bean { get; set; }
 
         public CoffeeMachine()
         {
@@ -47,34 +49,51 @@ namespace BaristaApi.CoffeeService
             return this;
         }
 
+        public ICoffeeMachine AddBean(string sort, int amount)
+        {
+            Bean = new Bean()
+            {
+                Sort = sort,
+                Amount = amount
+            };
+            return this;
+        }
+
+        public ICoffeeMachine AddBean(Func<Bean, Bean> beanFunc)
+        {
+            Bean = new Bean();
+            Bean = beanFunc(Bean);
+            return this;
+        }
+
         public IBeverage ToBeverage()
         {
             if (CheckRecipe(Ingredients, Espresso.recipe))
             {
-                return new Espresso(Ingredients);
+                return new Espresso(Ingredients, Bean);
             }
             else if (CheckRecipe(Ingredients, Cappuccino.recipe))
             {
-                return new Cappuccino(Ingredients);
+                return new Cappuccino(Ingredients, Bean);
             }
             else if (CheckRecipe(Ingredients, Americano.recipe))
             {
-                return new Americano(Ingredients);
+                return new Americano(Ingredients, Bean);
             }
             else if (CheckRecipe(Ingredients, Macchiato.recipe))
             {
-                return new Macchiato(Ingredients);
+                return new Macchiato(Ingredients, Bean);
             }
             else if (CheckRecipe(Ingredients, Mocha.recipe))
             {
-                return new Mocha(Ingredients);
+                return new Mocha(Ingredients, Bean);
             }
             else if (CheckRecipe(Ingredients, Latte.recipe))
             {
-                return new Latte(Ingredients);
+                return new Latte(Ingredients, Bean);
             }
 
-            IBeverage beverage = new CustomDrink(Ingredients);
+            IBeverage beverage = new CustomDrink(Ingredients, Bean);
             return beverage;
         }
 
@@ -85,5 +104,7 @@ namespace BaristaApi.CoffeeService
 
             return listOne.SequenceEqual(listTwo);
         }
+
+
     }
 }

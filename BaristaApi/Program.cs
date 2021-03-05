@@ -1,10 +1,13 @@
 ﻿using BaristaApi.CoffeeService;
+using BaristaApi.Ingredients;
 using System;
 
 namespace BaristaApi
 {
     internal class Program
     {
+        public delegate Bean BeanFunc(Bean bean);
+
         private static void Main(string[] args)
         {
             //Espresso espresso = new Espresso().AddWater(20).AddBeans(b => b.AmountInG = 5 && b.Sort = CoffeSorts.Robusta).ToBravage();
@@ -12,7 +15,8 @@ namespace BaristaApi
 
             //Latte latte = new Espresso().AddWater(20).AddBeans(b => b.AmountInG = 7 && b.Sort = CoffeSorts.Robusta).AddMilk().ToBravage();
             //latte is type of Latte
-            var espresso = new CoffeeMachine().AddEspresso().ToBeverage();
+
+            var espresso = new CoffeeMachine().AddEspresso().AddBean("Robusta", 100).ToBeverage();
             var cappuccino = new CoffeeMachine().AddEspresso().AddMilkFoam().AddMilk().ToBeverage();
             var americano = new CoffeeMachine().AddEspresso().AddWater().ToBeverage();
             var macchiato = new CoffeeMachine().AddEspresso().AddMilkFoam().ToBeverage();

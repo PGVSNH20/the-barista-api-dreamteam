@@ -1,4 +1,5 @@
 ﻿using BaristaApi.Beverages;
+using BaristaApi.Ingredients;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,6 +20,10 @@ namespace BaristaApi.CoffeeService
 
         public ICoffeeMachine AddWater();
 
-        public IBeverage ToBeverage();
+        public ICoffeeMachine AddBean(string sort, int amount);
+
+        public ICoffeeMachine AddBean(Func<Bean, Bean> beanFunc);
+
+        public IBeverage ToBeverage();     
     }
 }
