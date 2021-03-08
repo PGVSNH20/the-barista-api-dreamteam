@@ -1,0 +1,100 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="BaristaApi.Beverages.Americano">
+    <Position X="0.5" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Beverages\Americano.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BaristaApi.Beverages.Beverage">
+    <Position X="6.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAACAAgAAAAAAAAAAAAAAAABA=</HashCode>
+      <FileName>Beverages\Beverage.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="BaristaApi.Beverages.Cappuccino">
+    <Position X="5.75" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Beverages\Cappuccino.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BaristaApi.Beverages.CustomDrink">
+    <Position X="11" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Beverages\CustomDrink.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BaristaApi.Beverages.Espresso">
+    <Position X="2.25" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Beverages\Espresso.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BaristaApi.Beverages.Latte">
+    <Position X="7.5" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Beverages\Latte.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BaristaApi.Beverages.Macchiato">
+    <Position X="9.25" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Beverages\Macchiato.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BaristaApi.Beverages.Mocha">
+    <Position X="4" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Beverages\Mocha.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BaristaApi.CoffeeService.CoffeeMachine" BaseTypeListCollapsed="true">
+    <Position X="4.25" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAARAAAAQAAAAQAAAEABACAAgBAABAAAAAAAAAAAABA=</HashCode>
+      <FileName>CoffeeService\CoffeeMachine.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="BaristaApi.Ingredients.Bean">
+    <Position X="8.25" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAQAACAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Ingredients\Bean.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="BaristaApi.Beverages.IBeverage">
+    <Position X="0.5" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAACAAgAAAAAAAAAAAAAAAABA=</HashCode>
+      <FileName>Beverages\IBeverage.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="BaristaApi.CoffeeService.ICoffeeMachine">
+    <Position X="2.25" Y="1" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Nested Types" Collapsed="false" />
+    </Compartments>
+    <NestedTypes>
+      <Delegate Name="BaristaApi.CoffeeService.ICoffeeMachine.BeanDelegate">
+        <TypeIdentifier>
+          <NewMemberFileName>CoffeeService\ICoffeeMachine.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Delegate>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAAQAAAAQAAAAQAAAEABAAAAABAABAAAAAAAAAAAAAA=</HashCode>
+      <FileName>CoffeeService\ICoffeeMachine.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
