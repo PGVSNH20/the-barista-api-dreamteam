@@ -117,5 +117,10 @@ namespace BaristaApi.CoffeeService
 
             return listOne.SequenceEqual(listTwo);
         }
+
+        public void PrintBeverageTag()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

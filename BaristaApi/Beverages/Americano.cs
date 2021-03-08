@@ -18,5 +18,10 @@ namespace BaristaApi.Beverages
         public Americano(List<string> ingridients, Bean bean) : base(ingridients, bean)
         {
         }
+
+        public override void PrintBeverageTag()
+        {
+            Console.WriteLine("This beverage is an Americano");
+        }
     }
 }

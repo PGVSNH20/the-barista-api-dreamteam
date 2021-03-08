@@ -19,5 +19,10 @@ namespace BaristaApi.Beverages
         public Cappuccino(List<string> ingridients, Bean bean) : base(ingridients, bean)
         {
         }
+
+        public override void PrintBeverageTag()
+        {
+            Console.WriteLine("This beverage is an Cappuccino");
+        }
     }
 }
