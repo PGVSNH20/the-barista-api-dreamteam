@@ -3,7 +3,7 @@
 {
     public class Bean
     {
-        public string Sort { get; set; }
+        public string BeanType { get; set; }
         public int Amount { get; set; }
     }
 }

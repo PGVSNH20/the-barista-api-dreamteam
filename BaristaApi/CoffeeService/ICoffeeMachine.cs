@@ -11,7 +11,7 @@ namespace BaristaApi.CoffeeService
     public interface ICoffeeMachine
 
     {
-        public delegate Bean BeanDelegate(Bean bean);
+        //public delegate Bean BeanDelegate(Bean bean);
 
         public ICoffeeMachine AddEspresso();
 
@@ -25,9 +25,9 @@ namespace BaristaApi.CoffeeService
 
         public ICoffeeMachine AddBean(string sort, int amount);
 
-        //public ICoffeeMachine AddBean(Func<Bean, Bean> beanFunc);
+        public ICoffeeMachine AddBean(Func<Bean, Bean> beanFunc);
 
-        public ICoffeeMachine AddBean(BeanDelegate beanFunc);
+        //public ICoffeeMachine AddBean(BeanDelegate beanFunc);
 
         public IBeverage ToBeverage();
     }

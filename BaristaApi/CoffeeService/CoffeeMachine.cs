@@ -53,25 +53,25 @@ namespace BaristaApi.CoffeeService
         {
             Bean = new Bean()
             {
-                Sort = sort,
+                BeanType = sort,
                 Amount = amount
             };
             return this;
         }
 
-        //public ICoffeeMachine AddBean(Func<Bean, Bean> beanFunc)
-        //{
-        //    Bean = new Bean();
-        //    Bean = beanFunc(Bean);
-        //    return this;
-        //}
-
-        public ICoffeeMachine AddBean(ICoffeeMachine.BeanDelegate beanFunc)
+        public ICoffeeMachine AddBean(Func<Bean, Bean> beanFunc)
         {
             Bean = new Bean();
             Bean = beanFunc(Bean);
             return this;
         }
+
+        //public ICoffeeMachine AddBean(ICoffeeMachine.BeanDelegate beanFunc)
+        //{
+        //    Bean = new Bean();
+        //    Bean = beanFunc(Bean);
+        //    return this;
+        //}
 
         public IBeverage ToBeverage()
         {
