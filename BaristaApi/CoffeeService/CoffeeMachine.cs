@@ -49,6 +49,12 @@ namespace BaristaApi.CoffeeService
             return this;
         }
 
+        public ICoffeeMachine AddCustom(string ingredient)
+        {
+            Ingredients.Add(ingredient);
+            return this;
+        }
+
         public ICoffeeMachine AddBean(string sort, int amount)
         {
             Bean = new Bean()

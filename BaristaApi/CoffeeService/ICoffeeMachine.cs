@@ -23,6 +23,8 @@ namespace BaristaApi.CoffeeService
 
         public ICoffeeMachine AddWater();
 
+        public ICoffeeMachine AddCustom(string ingredient);
+
         public ICoffeeMachine AddBean(string sort, int amount);
 
         //public ICoffeeMachine AddBean(Func<Bean, Bean> beanFunc);
