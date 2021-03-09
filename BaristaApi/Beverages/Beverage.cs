@@ -8,10 +8,10 @@ using System.Threading.Tasks;
 
 namespace BaristaApi.Beverages
 {
-    public class Beverage : IBeverage
+    public abstract class Beverage : IBeverage
     {
         public List<string> Ingredients { set; get; }
-     
+
         public string CupType { set; get; }
 
         public Bean Bean { get; set; }
